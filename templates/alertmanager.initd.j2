@@ -1,0 +1,64 @@
+#!/sbin/openrc-run
+
+{%- if alertmanager_version is version_compare('0.13.0', '>=') %}
+{%- set pre = '-' %}
+{%- else %}
+{%- set pre = '' %}
+{%- endif %}
+{%- if alertmanager_version is version_compare('0.15.0', '<') %}
+{%- set cluster_flag = 'mesh' %}
+{%- else %}
+{%- set cluster_flag = 'cluster' %}
+{%- endif %}
+
+command="/usr/local/bin/alertmanager"
+command_args="$ARGS"
+command_args="${command_args:-\
+{% for option, value in alertmanager_cluster.items() %}
+{%   if option == "peers" %}
+{%     for peer in value %}
+  {{ pre }}-{{ cluster_flag }}.peer={{ peer }} \
+{%     endfor %}
+{%   else %}
+  {{ pre }}-{{ cluster_flag }}.{{ option }}={{ value }} \
+{%   endif %}
+{% endfor %}
+  {{ pre }}-config.file={{ alertmanager_config_dir }}/alertmanager.yml \
+  {{ pre }}-storage.path={{ alertmanager_db_dir }} \
+  {{ pre }}-web.listen-address={{ alertmanager_web_listen_address }} \
+  {{ pre }}-web.external-url={{ alertmanager_web_external_url }}{% for flag, flag_value in alertmanager_config_flags_extra.items() %} \
+  {{ pre }}-{{ flag }}={{ flag_value }}{% endfor %}
+}"
+
+command_background="yes"
+group="alertmanager"
+user="alertmanager"
+
+logdir="/var/log/alertmanager"
+logfile="$logdir/${SVCNAME}.log"
+pidfile="/var/run/${SVCNAME}.pid"
+start_stop_daemon_args="--stderr $logfile --user $user --group $group"
+
+extra_started_commands="reload"
+
+depend() {
+	after net
+}
+
+start_pre() {
+        checkpath -d -o $user:$group -m755 $logdir
+        checkpath -f -o $user:$group -m644 $logfile
+}
+
+reload() {
+	ebegin "Reloading configuration for ${RC_SVCNAME}"
+	case "$supervisor" in
+		supervise-daemon)
+		supervise-daemon ${RC_SVCNAME} --signal HUP
+		;;
+		*)
+		start-stop-daemon --signal HUP --pidfile "${pidfile}"
+		;;
+	esac
+	eend $? "Failed to reload ${RC_SVCNAME}"
+}
