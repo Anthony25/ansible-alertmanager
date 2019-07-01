@@ -4,6 +4,20 @@
 
 **Merged pull requests:**
 
+- New prometheus/alertmanager upstream release! [\#69](https://github.com/cloudalchemy/ansible-alertmanager/pull/69) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- support copying of alertmanager templates [\#68](https://github.com/cloudalchemy/ansible-alertmanager/pull/68) ([mjbnz](https://github.com/mjbnz))
+
+## [0.13.12](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-05-04)
+**Merged pull requests:**
+
+- Synchronize files from cloudalchemy/skeleton [\#71](https://github.com/cloudalchemy/ansible-alertmanager/pull/71) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Wait for network to be online [\#70](https://github.com/cloudalchemy/ansible-alertmanager/pull/70) ([paulfantom](https://github.com/paulfantom))
+- added proxy support [\#67](https://github.com/cloudalchemy/ansible-alertmanager/pull/67) ([thirdeye-oleksandr](https://github.com/thirdeye-oleksandr))
+
+## [0.13.11](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-04-05)
+**Merged pull requests:**
+
+- New prometheus/alertmanager upstream release! [\#66](https://github.com/cloudalchemy/ansible-alertmanager/pull/66) ([cloudalchemybot](https://github.com/cloudalchemybot))
 - Change auth\_require\_tls to require\_tls [\#65](https://github.com/cloudalchemy/ansible-alertmanager/pull/65) ([lunarthegrey](https://github.com/lunarthegrey))
 
 ## [0.13.10](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-03-04)
@@ -232,12 +246,12 @@
 ## [0.4.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-11-13)
 ## [0.4.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-10-16)
 ## [0.3.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-10-05)
-## [0.3.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
 ## [0.2.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
+## [0.3.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
 ## [0.1.6](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-12)
 ## [0.1.5](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-12)
-## [0.1.4](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
 ## [0.1.3](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
+## [0.1.4](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
 ## [0.1.2](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-03)
 ## [0.1.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-06-14)
 ## [0.1.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-06-06)
