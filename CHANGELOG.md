@@ -4,6 +4,37 @@
 
 **Merged pull requests:**
 
+- make order of cluster args deterministic [\#91](https://github.com/cloudalchemy/ansible-alertmanager/pull/91) ([slomo](https://github.com/slomo))
+
+## [0.15.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-10-02)
+**Implemented enhancements:**
+
+- Allow using `latest` as a version specifier [\#44](https://github.com/cloudalchemy/ansible-alertmanager/issues/44)
+
+**Closed issues:**
+
+- cluster setup broken in default [\#87](https://github.com/cloudalchemy/ansible-alertmanager/issues/87)
+- systemd: Failed to start Alertmanager \(when Prometheus is not running yet\) [\#74](https://github.com/cloudalchemy/ansible-alertmanager/issues/74)
+
+**Merged pull requests:**
+
+- Adjust systemd restrictions [\#90](https://github.com/cloudalchemy/ansible-alertmanager/pull/90) ([corny](https://github.com/corny))
+- New prometheus/alertmanager upstream release! [\#89](https://github.com/cloudalchemy/ansible-alertmanager/pull/89) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Cluster fix [\#88](https://github.com/cloudalchemy/ansible-alertmanager/pull/88) ([gajowi](https://github.com/gajowi))
+- Synchronize files from cloudalchemy/skeleton [\#86](https://github.com/cloudalchemy/ansible-alertmanager/pull/86) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- add support for RHEL8 \(without automated testing\) [\#84](https://github.com/cloudalchemy/ansible-alertmanager/pull/84) ([paulfantom](https://github.com/paulfantom))
+- drop testing on debian jessie and add support for debian buster [\#82](https://github.com/cloudalchemy/ansible-alertmanager/pull/82) ([paulfantom](https://github.com/paulfantom))
+- update to fedora 30 and bring in mechanism for installing SELinux deps known from ansible-prometheus [\#81](https://github.com/cloudalchemy/ansible-alertmanager/pull/81) ([paulfantom](https://github.com/paulfantom))
+- increase systemd service security restrictions [\#80](https://github.com/cloudalchemy/ansible-alertmanager/pull/80) ([paulfantom](https://github.com/paulfantom))
+- propagate support for 'latest' version specifier from ansible-prometheus [\#79](https://github.com/cloudalchemy/ansible-alertmanager/pull/79) ([paulfantom](https://github.com/paulfantom))
+- Update minimum required ansible version [\#78](https://github.com/cloudalchemy/ansible-alertmanager/pull/78) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Moving to python 3 and dropping support for python 2.x \(on deployer host\) [\#77](https://github.com/cloudalchemy/ansible-alertmanager/pull/77) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Synchronize files from cloudalchemy/skeleton [\#75](https://github.com/cloudalchemy/ansible-alertmanager/pull/75) ([cloudalchemybot](https://github.com/cloudalchemybot))
+
+## [0.14.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-07-11)
+**Merged pull requests:**
+
+- New prometheus/alertmanager upstream release! [\#73](https://github.com/cloudalchemy/ansible-alertmanager/pull/73) ([cloudalchemybot](https://github.com/cloudalchemybot))
 - New prometheus/alertmanager upstream release! [\#69](https://github.com/cloudalchemy/ansible-alertmanager/pull/69) ([cloudalchemybot](https://github.com/cloudalchemybot))
 - support copying of alertmanager templates [\#68](https://github.com/cloudalchemy/ansible-alertmanager/pull/68) ([mjbnz](https://github.com/mjbnz))
 
