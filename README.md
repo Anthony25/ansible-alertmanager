@@ -6,7 +6,6 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Ansible Role](https://img.shields.io/badge/ansible%20role-cloudalchemy.alertmanager-blue.svg)](https://galaxy.ansible.com/cloudalchemy/alertmanager/)
 [![GitHub tag](https://img.shields.io/github/tag/cloudalchemy/ansible-alertmanager.svg)](https://github.com/cloudalchemy/ansible-alertmanager/tags)
-[![IRC](https://img.shields.io/badge/irc.freenode.net-%23cloudalchemy-yellow.svg)](https://kiwiirc.com/nextclient/#ircs://irc.freenode.net/#cloudalchemy)
 
 ## Description
 
@@ -14,7 +13,7 @@ Deploy and manage Prometheus [alertmanager](https://github.com/prometheus/alertm
 
 ## Requirements
 
-- Ansible >= 2.6 (It might work on previous versions, but we cannot guarantee it)
+- Ansible >= 2.7 (It might work on previous versions, but we cannot guarantee it)
 
 It would be nice to have prometheus installed somewhere
 
@@ -24,7 +23,8 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `alertmanager_version` | 0.19.0 | Alertmanager package version. Also accepts `latest` as parameter. |
+| `alertmanager_version` | 0.20.0 | Alertmanager package version. Also accepts `latest` as parameter. |
+| `alertmanager_binaries_local_dir` | "" | Allows to use local packages instead of ones distributed on github. As parameter it takes a directory where `alertmanager` AND `amtool` binaries are stored on host on which ansible is ran. This overrides `alertmanager_version` parameter |
 | `alertmanager_web_listen_address` | 0.0.0.0:9093 | Address on which alertmanager will be listening |
 | `alertmanager_web_external_url` | http://localhost:9093/ | External address on which alertmanager is available. Useful when behind reverse proxy. Ex. example.org/alertmanager |
 | `alertmanager_config_dir` | /etc/alertmanager | Path to directory with alertmanager configuration |
@@ -34,6 +34,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `alertmanager_template_files` | ['alertmanager/templates/*.tmpl'] | List of folders where ansible will look for template files which will be copied to `{{ alertmanager_config_dir }}/templates/`. Files must have `*.tmpl` extension |
 | `alertmanager_resolve_timeout` | 3m | Time after which an alert is declared resolved |
 | `alertmanager_smtp` | {} | SMTP (email) configuration |
+| `alertmanager_http_config` | {} | Http config for using custom webhooks |
 | `alertmanager_slack_api_url` | "" | Slack webhook url |
 | `alertmanager_pagerduty_url` | "" | Pagerduty webhook url |
 | `alertmanager_opsgenie_api_key` | "" | Opsgenie webhook key |
@@ -47,7 +48,6 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `alertmanager_receivers` | [] | A list of notification receivers. Configuration same as in [official docs](https://prometheus.io/docs/alerting/configuration/#<receiver>) |
 | `alertmanager_inhibit_rules` | [] | List of inhibition rules. Same as in [official docs](https://prometheus.io/docs/alerting/configuration/#inhibit_rule) |
 | `alertmanager_route` | {} | Alert routing. More in [official docs](https://prometheus.io/docs/alerting/configuration/#<route>) |
-| `alertmanager_child_routes` | [] | List of child routes. |
 
 ## Example
 

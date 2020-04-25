@@ -10,10 +10,8 @@ global:
 {% endif %}
 {% if alertmanager_http_config | length %}
   http_config:
+    {{ alertmanager_http_config | to_nice_yaml(indent=2) | indent(4, False)}}
 {% endif %}
-{% for key, value in alertmanager_http_config.items() %}
-    {{ key }}: {{ value | quote }}
-{% endfor %}
 {% if alertmanager_pagerduty_url | length %}
   pagerduty_url: {{ alertmanager_pagerduty_url | quote }}
 {% endif %}
@@ -50,7 +48,3 @@ inhibit_rules:
 {% endif %}
 route:
   {{ alertmanager_route | to_nice_yaml(indent=2) | indent(2, False) }}
-{% if alertmanager_child_routes | length %}
-  routes:
-  {{ alertmanager_child_routes | to_nice_yaml(indent=2) | indent(2, False) }}
-{% endif %}

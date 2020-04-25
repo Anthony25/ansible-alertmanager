@@ -1,9 +1,58 @@
 # Change Log
 
-## [**Next release**](https://galaxy.ansible.com/cloudalchemy/alertmanager)
+## [0.17.2](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-04-24)
+**Fixed bugs:**
+
+- Fixed alertmanager\_http\_config setting failing deploy [\#122](https://github.com/cloudalchemy/ansible-alertmanager/pull/122) ([graudeejs](https://github.com/graudeejs))
+
+## [0.17.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-03-29)
+**Merged pull requests:**
+
+- add deprecation warnings [\#120](https://github.com/cloudalchemy/ansible-alertmanager/pull/120) ([paulfantom](https://github.com/paulfantom))
+
+## [0.17.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-03-29)
+**Implemented enhancements:**
+
+- Http config unable to set basic auth [\#115](https://github.com/cloudalchemy/ansible-alertmanager/issues/115)
+
+**Fixed bugs:**
+
+- binary checksum seems broken [\#117](https://github.com/cloudalchemy/ansible-alertmanager/issues/117)
+- "No package policycoreutils-python available." [\#111](https://github.com/cloudalchemy/ansible-alertmanager/issues/111)
 
 **Merged pull requests:**
 
+- \[REPO SYNC\] lock molecule to v2 [\#118](https://github.com/cloudalchemy/ansible-alertmanager/pull/118) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Modify http\_config to handle basic auth [\#116](https://github.com/cloudalchemy/ansible-alertmanager/pull/116) ([mcsammac](https://github.com/mcsammac))
+- Corrected typo on preflight check [\#114](https://github.com/cloudalchemy/ansible-alertmanager/pull/114) ([WilliamBriot](https://github.com/WilliamBriot))
+- Flush handlers after configuration [\#113](https://github.com/cloudalchemy/ansible-alertmanager/pull/113) ([jstaffans](https://github.com/jstaffans))
+- move installing selinux package dependencies into separate tasks [\#112](https://github.com/cloudalchemy/ansible-alertmanager/pull/112) ([wikro](https://github.com/wikro))
+- \[REPO SYNC\] Merge pull request \#4 from cloudalchemy/travis\_fix [\#110](https://github.com/cloudalchemy/ansible-alertmanager/pull/110) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] use latest available python [\#109](https://github.com/cloudalchemy/ansible-alertmanager/pull/109) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Remove alertmanager\_child\_routes [\#101](https://github.com/cloudalchemy/ansible-alertmanager/pull/101) ([paulfantom](https://github.com/paulfantom))
+
+## [0.16.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-01-11)
+**Implemented enhancements:**
+
+- Having the choice to install the package or not [\#49](https://github.com/cloudalchemy/ansible-alertmanager/issues/49)
+
+**Merged pull requests:**
+
+- Switch user login shell to /usr/sbin/nologin [\#108](https://github.com/cloudalchemy/ansible-alertmanager/pull/108) ([paulfantom](https://github.com/paulfantom))
+- \[REPO SYNC\] use latest available python [\#107](https://github.com/cloudalchemy/ansible-alertmanager/pull/107) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] remove IRC link [\#105](https://github.com/cloudalchemy/ansible-alertmanager/pull/105) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- New prometheus/alertmanager upstream release! [\#104](https://github.com/cloudalchemy/ansible-alertmanager/pull/104) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- Do not fail when using a custom config template file [\#103](https://github.com/cloudalchemy/ansible-alertmanager/pull/103) ([DaazKu](https://github.com/DaazKu))
+- Add restart handler on configuration template change [\#102](https://github.com/cloudalchemy/ansible-alertmanager/pull/102) ([iwagner-inmar](https://github.com/iwagner-inmar))
+- \[REPO SYNC\] add declarative label sync; add autolabelling PRs [\#97](https://github.com/cloudalchemy/ansible-alertmanager/pull/97) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] molecule: use CI images from quay.io instead of dockerhub [\#95](https://github.com/cloudalchemy/ansible-alertmanager/pull/95) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- add option to propagate binaries without access to internet [\#83](https://github.com/cloudalchemy/ansible-alertmanager/pull/83) ([paulfantom](https://github.com/paulfantom))
+
+## [0.15.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-11-11)
+**Merged pull requests:**
+
+- \[REPO SYNC\] Update releaser.sh [\#93](https://github.com/cloudalchemy/ansible-alertmanager/pull/93) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] add support for CentOS8 [\#92](https://github.com/cloudalchemy/ansible-alertmanager/pull/92) ([cloudalchemybot](https://github.com/cloudalchemybot))
 - make order of cluster args deterministic [\#91](https://github.com/cloudalchemy/ansible-alertmanager/pull/91) ([slomo](https://github.com/slomo))
 
 ## [0.15.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2019-10-02)
@@ -277,12 +326,12 @@
 ## [0.4.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-11-13)
 ## [0.4.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-10-16)
 ## [0.3.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-10-05)
-## [0.2.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
 ## [0.3.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
+## [0.2.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-21)
 ## [0.1.6](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-12)
 ## [0.1.5](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-12)
-## [0.1.3](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
 ## [0.1.4](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
+## [0.1.3](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-10)
 ## [0.1.2](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-07-03)
 ## [0.1.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-06-14)
 ## [0.1.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2017-06-06)

@@ -22,6 +22,12 @@
   tags:
     - alertmanager_install
 
+- import_tasks: selinux.yml
+  become: true
+  when: ansible_selinux.status == "enabled"
+  tags:
+    - alertmanager_configure
+
 - include: configure.yml
   become: true
   tags:
@@ -35,3 +41,5 @@
     enabled: true
   tags:
     - alertmanager_run
+
+- meta: flush_handlers
