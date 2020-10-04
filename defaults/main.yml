@@ -1,5 +1,5 @@
 ---
-alertmanager_version: 0.20.0
+alertmanager_version: 0.21.0
 alertmanager_binary_local_dir: ''
 
 alertmanager_config_dir: /etc/alertmanager
@@ -37,6 +37,8 @@ alertmanager_slack_api_url: ''
 alertmanager_pagerduty_url: ''
 alertmanager_opsgenie_api_key: ''
 alertmanager_opsgenie_api_url: ''
+alertmanager_victorops_api_key: ''
+alertmanager_victorops_api_url: ''
 alertmanager_hipchat_api_url: ''
 alertmanager_hipchat_auth_token: ''
 alertmanager_wechat_url: ''
@@ -111,3 +113,12 @@ alertmanager_route: {}
 #         - match:
 #             owner: team-Y
 #           receiver: team-Y-pager
+
+# The template for amtool's configuration
+alertmanager_amtool_config_file: 'amtool.yml.j2'
+
+# Location (URL) of the alertmanager
+alertmanager_amtool_config_alertmanager_url: "{{ alertmanager_web_external_url }}"
+
+# Extended output of `amtool` commands, use '' for less verbosity
+alertmanager_amtool_config_output: 'extended'

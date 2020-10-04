@@ -1,5 +1,45 @@
 # Change Log
 
+## [**Next release**](https://galaxy.ansible.com/cloudalchemy/alertmanager)
+
+**Implemented enhancements:**
+
+- Add on README.md example playbook that alertmanager\_route and alertmanager\_receivers is needed [\#132](https://github.com/cloudalchemy/ansible-alertmanager/issues/132)
+
+**Fixed bugs:**
+
+- var name docu mismatch alertmanager\_binaries\_local\_dir  [\#130](https://github.com/cloudalchemy/ansible-alertmanager/issues/130)
+
+**Merged pull requests:**
+
+- \[REPO SYNC\] add troubleshooting doc skeleton [\#139](https://github.com/cloudalchemy/ansible-alertmanager/pull/139) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- README.md: Add a basic working playbook example [\#136](https://github.com/cloudalchemy/ansible-alertmanager/pull/136) ([bryanasdev000](https://github.com/bryanasdev000))
+
+## [0.19.1](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-09-03)
+**Merged pull requests:**
+
+- Fix lint errors [\#138](https://github.com/cloudalchemy/ansible-alertmanager/pull/138) ([SuperQ](https://github.com/SuperQ))
+- Fix typo in README.md [\#137](https://github.com/cloudalchemy/ansible-alertmanager/pull/137) ([S3RK](https://github.com/S3RK))
+
+## [0.19.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-07-21)
+**Merged pull requests:**
+
+- Add amtool configuration on alertmanager host [\#135](https://github.com/cloudalchemy/ansible-alertmanager/pull/135) ([till](https://github.com/till))
+- Fix: fail on alertmanager\_child\_routes [\#134](https://github.com/cloudalchemy/ansible-alertmanager/pull/134) ([till](https://github.com/till))
+
+## [0.18.0](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-07-03)
+**Merged pull requests:**
+
+- Add VictorOps configuration options [\#133](https://github.com/cloudalchemy/ansible-alertmanager/pull/133) ([bartoszcisek](https://github.com/bartoszcisek))
+
+## [0.17.3](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-06-17)
+**Merged pull requests:**
+
+- New prometheus/alertmanager upstream release! [\#129](https://github.com/cloudalchemy/ansible-alertmanager/pull/129) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- \[REPO SYNC\] Add passlib as a test requirement [\#128](https://github.com/cloudalchemy/ansible-alertmanager/pull/128) ([cloudalchemybot](https://github.com/cloudalchemybot))
+- adds option to change install dir [\#126](https://github.com/cloudalchemy/ansible-alertmanager/pull/126) ([wookietreiber](https://github.com/wookietreiber))
+- Support encrypted variables in Alertmanager template file [\#124](https://github.com/cloudalchemy/ansible-alertmanager/pull/124) ([nikosmeds](https://github.com/nikosmeds))
+
 ## [0.17.2](https://galaxy.ansible.com/cloudalchemy/alertmanager) (2020-04-24)
 **Fixed bugs:**
 

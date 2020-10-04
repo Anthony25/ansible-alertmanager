@@ -23,8 +23,8 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `alertmanager_version` | 0.20.0 | Alertmanager package version. Also accepts `latest` as parameter. |
-| `alertmanager_binaries_local_dir` | "" | Allows to use local packages instead of ones distributed on github. As parameter it takes a directory where `alertmanager` AND `amtool` binaries are stored on host on which ansible is ran. This overrides `alertmanager_version` parameter |
+| `alertmanager_version` | 0.21.0 | Alertmanager package version. Also accepts `latest` as parameter. |
+| `alertmanager_binary_local_dir` | "" | Allows to use local packages instead of ones distributed on github. As parameter it takes a directory where `alertmanager` AND `amtool` binaries are stored on host on which ansible is ran. This overrides `alertmanager_version` parameter |
 | `alertmanager_web_listen_address` | 0.0.0.0:9093 | Address on which alertmanager will be listening |
 | `alertmanager_web_external_url` | http://localhost:9093/ | External address on which alertmanager is available. Useful when behind reverse proxy. Ex. example.org/alertmanager |
 | `alertmanager_config_dir` | /etc/alertmanager | Path to directory with alertmanager configuration |
@@ -39,6 +39,8 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `alertmanager_pagerduty_url` | "" | Pagerduty webhook url |
 | `alertmanager_opsgenie_api_key` | "" | Opsgenie webhook key |
 | `alertmanager_opsgenie_api_url` | "" | Opsgenie webhook url |
+| `alertmanager_victorops_api_key` | "" | VictorOps webhook key |
+| `alertmanager_victorops_api_url` | "" | VictorOps webhook url |
 | `alertmanager_hipchat_api_url` | "" | Hipchat webhook url |
 | `alertmanager_hipchat_auth_token` | "" | Hipchat authentication token |
 | `alertmanager_wechat_url` | "" | Enterprise WeChat webhook url |
@@ -48,15 +50,33 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `alertmanager_receivers` | [] | A list of notification receivers. Configuration same as in [official docs](https://prometheus.io/docs/alerting/configuration/#<receiver>) |
 | `alertmanager_inhibit_rules` | [] | List of inhibition rules. Same as in [official docs](https://prometheus.io/docs/alerting/configuration/#inhibit_rule) |
 | `alertmanager_route` | {} | Alert routing. More in [official docs](https://prometheus.io/docs/alerting/configuration/#<route>) |
+| `alertmanager_amtool_config_file` | amtool.yml.j2 | Template for amtool config |
+| `alertmanager_amtool_config_alertmanager_url` | `alertmanager_web_external_url` | URL of the alertmanager |
+| `alertmanager_amtool_config_output` | extended | Extended output, use `""` for simple output. |
 
 ## Example
 
 ### Playbook
 
 ```yaml
-- hosts: all
+---
+  hosts: all
   roles:
-    - cloudalchemy.alertmanager
+    - ansible-alertmanager
+  vars:
+    alertmanager_version: latest
+    alertmanager_slack_api_url: "http://example.com"
+    alertmanager_receivers:
+      - name: slack
+        slack_configs:
+          - send_resolved: true
+            channel: '#alerts'
+    alertmanager_route:
+      group_by: ['alertname', 'cluster', 'service']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 3h
+      receiver: slack
 ```
 
 ### Demo site
@@ -89,6 +109,10 @@ Combining molecule and travis CI allows us to test how new PRs will behave when 
 ## Contributing
 
 See [contributor guideline](CONTRIBUTING.md).
+
+## Troubleshooting
+
+See [troubleshooting](TROUBLESHOOTING.md).
 
 ## License
 
